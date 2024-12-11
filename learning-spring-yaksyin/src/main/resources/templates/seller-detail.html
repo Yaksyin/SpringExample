@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Seller</title>
+</head>
+<body>
+<h1>Detail Seller</h1>
+<p><strong>Coffe ID:</strong> <span th:text="${seller.coffeId}"></span></p>
+<p><strong>Coffe Type:</strong> <span th:text="${seller.coffeType}"></span></p>
+<p><strong>Seller Name:</strong> <span th:text="${seller.sellerName}"></span></p>
+<p><strong>Product Name:</strong> <span th:text="${seller.productName}"></span></p>
+<p><strong>Created At:</strong> <span th:text="${seller.createdAt}"></span></p>
+<p><strong>Created By:</strong> <span th:text="${seller.createdBy}"></span></p>
+
+<!--Untuk kembali ke list -->
+<a href="/sellers/">Back to List</a>
+</body>
+</html>

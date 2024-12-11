@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller List</title>
+</head>
+<body>
+<h1>List of Sellers</h1>
+
+<!-- Tombol untuk menambah seller baru -->
+<a href="/sellers/new">
+    <button>Add New Seller</button>
+</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Coffee ID</th>
+        <th>Coffee Type</th>
+        <th>Seller Name</th>
+        <th>Product Name</th>
+        <th>Created At</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="seller : ${sellers}">
+        <tr>
+            <td th:text="${seller.coffeId}"></td>
+            <td th:text="${seller.coffeType}"></td>
+            <td th:text="${seller.sellerName}"></td>
+            <td th:text="${seller.productName}"></td>
+            <td th:text="${seller.createdAt}"></td>
+            <td>
+                <!-- Link untuk melihat detail seller berdasarkan coffeId -->
+                <a th:href="@{/sellers/{id}(id=${seller.coffeId})}">View Details</a>
+            </td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
+</body>
+</html>
